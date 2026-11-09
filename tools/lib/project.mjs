@@ -86,7 +86,7 @@ export async function createProject(card, name, { root = ROOT, originalBytes, or
     }
     if (image) { project.avatar = 'src/assets/avatar.png'; await write(path.join(temporary, project.avatar), image); }
     await writeJSON(path.join(temporary, 'tests/regex.json'), []);
-    await write(path.join(temporary, '创作说明.md'), '# 创作说明\n\n此文件不打包，不会发送给模型。\n\n- 目标体验：\n- 角色关系与边界：\n- 当前待完善：\n- 已验证环境：未进行真实酒馆实测。\n');
+    await write(path.join(temporary, '创作说明.md'), '# 创作说明\n\n此文件不打包，不会发送给模型。\n\n- 目标体验：\n- 角色关系与边界：\n- 已定设计：\n- 写法约束：\n- 改一处要同步的地方：\n- 当前待完善：\n- 已验证环境：未进行真实酒馆实测。\n');
     if (setup) await setup(project, temporary);
     await writeJSON(path.join(temporary, 'project.json'), project);
     if (formatVersion === 2) await writeAuthoring(temporary, card, project);
